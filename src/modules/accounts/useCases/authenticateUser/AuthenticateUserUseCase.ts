@@ -3,15 +3,8 @@ import { sign } from 'jsonwebtoken';
 import { inject, injectable } from 'tsyringe';
 
 import { IRequest } from '../../dtos/IRequest';
+import { IResponse } from '../../dtos/IResponse';
 import { UsersRepository } from '../../repositories/implementations/UsersRepository';
-
-interface IResponse {
-  user: {
-    name: string;
-    email: string;
-  };
-  token: string;
-}
 
 @injectable()
 class AuthenticateUserUseCase {
